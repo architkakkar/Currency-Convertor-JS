@@ -65,13 +65,12 @@ form input {
   position: relative;
   top: 14px;
   cursor: pointer;
+  transition: 250ms transform ease-in-out;
 }
 
-/* not implemented yet */
-/* .exchange {
-  transition: 350ms transform ease;
+.exchange {
   transform: rotate(360deg);
-} */
+}
 
 .select-container img {
   max-width: 2.25rem;
