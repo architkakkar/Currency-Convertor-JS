@@ -125,6 +125,9 @@ interchange.addEventListener("click", () => {
   setFlag(to);
 
   // rotate effect.
-  // yet to test this feature, will rollout later.
-  // interchange.classList.toggle("exchange");
+  interchange.classList.add("exchange");
+
+  setTimeout(() => {
+    interchange.classList.remove("exchange");
+  }, 250);
 });
