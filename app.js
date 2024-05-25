@@ -1,5 +1,5 @@
 // API Endpoint.
-const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
+const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
 // DOM elements.
 const dropdowns = document.querySelectorAll(".dropdown select");
@@ -83,14 +83,16 @@ btn.addEventListener("click", (e) => {
 // function to get the conversion rate from API.
 async function updateExchangeRate(amount, from, to) {
   // update API endpoint with params.
-  const URL = `${BASE_URL}/${from.toLowerCase()}/${to.toLowerCase()}.json`;
+  const URL = `${BASE_URL}/${from.toLowerCase()}.json`;
 
   // fetching the data from API.
   const response = await fetch(URL);
   const data = await response.json();
-
+  
+  const allConversions = data[from.toLowerCase()];
+  
   // parsing the rate to float and multiplying with the amount later.
-  const rate = parseFloat(data[to.toLowerCase()]);
+  const rate = parseFloat(allConversions[to.toLowerCase()]);
   let result = rate * amount;
 
   // rounding off result value.

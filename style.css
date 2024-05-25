@@ -92,7 +92,12 @@ form input {
 }
 
 .msg {
+  padding: 10px 0;
   margin: 2.25rem 0;
+  background-color: #22c55e40;
+  color: rgb(21 128 61);
+  border: 1px solid rgb(21 128 61);
+  border-radius: 0.5rem;
   text-align: center;
   font-weight: 600;
   font-size: 1.1rem;
